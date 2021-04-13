@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment # object kind
+metadata:
+  name: client-deployment
+spec: # to configure deployment
+  replicas: 3 # create 3 instances of 'docker-multi-client' pod
+  selector:
+    matchLabels: 
+      component: web # means this deployment will be managing web/frontend side
+  template: # pod template
+    metadata: 
+      labels:
+        component: web # label to identify which pod to manage
+    spec:
+      containers:
+        - name: client
+          image: abhi90g/docker-multi-client
+          ports:
+            - containerPort: 3000 # this port is mapped to 'docker-multi-client' image
