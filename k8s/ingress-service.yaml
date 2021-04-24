@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-    kubernetes.io/ingress.class: nginx # telling kubernetes we want to create a ingress controller based on nginx project
+    kubernetes.io/ingress.class: 'nginx' # telling kubernetes we want to create a ingress controller based on nginx project
     nginx.ingress.kubernetes.io/use-regex: 'true' # to resolve regex 404 errors on google cloud
     nginx.ingress.kubernetes.io/rewrite-target: /$1 # for removing 'api' from request and just putting '/'
 spec:

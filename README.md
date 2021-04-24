@@ -23,3 +23,15 @@ This shows:
   - gcloud config set project `<project ID>`
   - gcloud config set compute/zone `<location of kubernetes cluster>`
   - gcloud container clusters get-credentials `<project name>
+
+#### Create secret for cluster on gcloud for postgres
+- kubectl create secret generic pgpassword --from-literal <KEY>=<password>
+
+#### Installation: helm 3 and ingress-nginx
+- run following once for new cluster
+  - curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  - chmod 700 get_helm.sh
+  - ./get_helm.sh
+- for ingress-nginx install
+  - helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+  - helm install my-release ingress-nginx/ingress-nginx
