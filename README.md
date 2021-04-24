@@ -19,7 +19,7 @@ This shows:
   
   
 #### On Google cloud  
-- run following cmds one time for initial setup in google cloud shell
+- run following cmds one time for initial setup in google cloud shell (for each new cluster)
   - gcloud config set project `<project ID>`
   - gcloud config set compute/zone `<location of kubernetes cluster>`
   - gcloud container clusters get-credentials `<project name>
